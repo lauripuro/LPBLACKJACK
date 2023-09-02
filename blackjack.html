@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="blackjack.CSS">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="big-box">
+    <div id="cover-sheet" class="cover-sheet">
+      <p class="cover-sheet-title">BLACKJACK</p>
+      <div id="s-r-div">
+        <button class="s-r-button" onclick="showSignIn()">SIGN IN</button>
+        <button class="s-r-button" onclick="showRegister()">REGISTER</button>
+      </div>
+      <div class="sign-in-div" id="sign-in-div">
+        <input id="username-box" type="text" class="username-box" placeholder="USERNAME">
+        <input id="password-box" type="password" class="password-box" placeholder="PASSWORD">
+        <button class="password-button" onclick="passwordCheck()">SIGN IN</button>
+      </div>
+      <div class="register-div" id="register-div">
+        <input id="username-register" type="text" class="username-box" placeholder="USERNAME">
+        <input id="password-register" type="password" class="password-box" placeholder="PASSWORD">
+        <input id="password-register-2" type="password" class="password-box" placeholder="PASSWORD AGAIN">
+        <button class="password-button" onclick="register()">REGISTER</button>
+      </div>
+      <div>
+        <button class="return-button" id="return-button" onclick="srReturn()">RETURN</button>
+      </div>
+      <div>
+        <p id="sign-register-text"></p>
+      </div>  
+    </div>
+    <div class="main-page">
+      <div class="sidebar" id="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+        <div class="thin-block"></div>
+        <div class="sidebar-section" onclick="showProfile()">
+          <img src="icons/user.svg" class="sidebar-icon">
+          <div>PROFILE</div>
+        </div>
+        <div class="sidebar-section" onclick="showLeaderboard()">
+          <img src="icons/trophy.svg" class="sidebar-icon">
+          <div>LEADERBOARD</div>
+        </div>
+        <div class="sidebar-section" onclick="signOut()">
+          <img src="icons/log-out.svg" class="sidebar-icon">
+          <div>SIGN OUT</div>
+        </div>
+        <div class="sidebar-block"></div>
+      </div>
+      <!--<button class="leaderboard-button" id="leaderboard-button" onclick="showLeaderboard()">Leaderboard</button>-->
+
+  
+  
+      <div id="leaderboard-sheet" class="leaderboard-sheet">
+        <div class="X-button-div">
+          <button class="X-button" onclick="showLeaderboard()">
+            <img src="icons/x.svg">
+          </button>
+        </div>
+        <div class="lb-button-div">
+          <button class="current-lb-button" id="current-lb-button" onclick="showCurrentLeaderboard()">CURRENT</button>
+          <button class="all-time-lb-button" id="all-time-lb-button" onclick="showAllTimeLeaderboard()">ALL TIME</button>
+        </div>
+        <div class="leaderboard-box" id="leaderboard-box"></div>
+      </div>
+
+      <div id="profile-sheet" class="profile-sheet">
+        <div class="X-button-div">
+          <button class="X-button" onclick="showProfile()">
+            <img src="icons/x.svg">
+          </button>
+        </div>
+        <div id="username"></div>
+        <div class="profile-box" id="profile-box">
+          <div id="high-score" class="profile-box-row"></div>
+          <div id="games-played" class="profile-box-row"></div>
+          <div id="wins" class="profile-box-row"></div>
+          <div id="losses" class="profile-box-row"></div>
+          <div id="ties" class="profile-box-row"></div>
+          <div id="register-date" class="profile-box-row"></div>
+        </div>
+      </div>
+
+  
+  
+      <div class="bottom-box">
+        <div class="text-box">
+          <p id="display" class="text-box-rows">Do you want to play?</p>
+          <div id="card-icon-box" class="sum-text"></div>
+
+          <div id="sum" class="sum-text"></div>
+          <p id="dealer-score" class="text-box-rows"></p>
+          <div id="message" class="text-box-rows"></div>
+        </div>
+
+
+        <div class="button-box">
+          <button id="card-button" class="draw-card-button" onclick="drawCard()">
+            DRAW CARD
+          </button>
+          <button id="play-button" class="play-button" onclick="startGame()">
+            PLAY
+          </button>
+          <button id="dealer-play-button" class="stop-drawing-button" onclick="dealerPlay()">
+            STOP DRAWING
+          </button>
+        </div>
+      </div>
+
+
+      <div class="right-bar">
+        <div class="bb-div">
+          <div id="balance">BALANCE: 100 €</div>
+        </div>
+        <div class="bb-div">
+          <div>BET:</div>
+          <select id="bet-selector" class="bet-selector">
+            <option value="10">10 €</option>
+            <option value="20">20 €</option>
+            <option value="50">50 €</option>
+            <option value="100">100 €</option>
+            <option value="200">200 €</option>
+            <option value="500">500 €</option>
+            <option value="1000">1000 €</option>
+          </select>
+        </div>
+      </div>
+    </div>  
+  </div>
+  
+
+
+
+  <script src="blackjack.js"></script>
+</body>
