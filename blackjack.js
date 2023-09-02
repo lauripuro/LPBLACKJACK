@@ -213,7 +213,7 @@ function register() {
     if (x === 0 && username.length < 11) {
       let registerDate = dateMaker()
       userData.push({käyttäjätunnus:username, saldo:100, salasana:password, ennätys:100, pelit:0, voitot:0, tasapelit:0, häviöt:0, päivä:registerDate})
-      text.innerText = "USER: " + username + " REGISTERED SUCCESFULLY"
+      text.innerText = username + " REGISTERED SUCCESFULLY"
     } else if (x === 0 && username.length > 10) {
       text.innerText = "USERNAME HAS TO BE LESS THAN 10 CHARACTERS"
       return
